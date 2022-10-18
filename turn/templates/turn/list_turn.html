@@ -1,0 +1,40 @@
+{% load static %}
+     <link rel="stylesheet" href="{% static 'accounts/css/list_turn.css' %}">
+
+     <table  cellpadding="0" cellspacing="0" border="0">
+        <thead  >
+          <tr >
+            <th > زمان </th>
+            <th>شماره تلفن</th>
+            <th>کد ملی</th>
+            <th>نام </th>
+
+
+
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table dir="rtl" cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+            {% for turn in turns %}
+            <tr>
+            <td>  <strong>{{turn.name}} </td>
+            <td >{{turn.nationcode}}</td>
+            <td>{{turn.mobile}}</td>
+            <td id="labal{{c.product.id}}">{{turn.from_time}} </td>
+          </tr>
+          {% endfor %}
+          <!-- <tr>
+            <td>قیمت کل</td>
+            
+            <td colspan="2"></td>
+            <td id="lable_total_price">{{cart.get_total}}</td>
+            
+    
+    
+          </tr> -->
+        </tbody>
+      </table>
+      

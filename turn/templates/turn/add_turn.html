@@ -1,0 +1,58 @@
+{% load static %}
+     <link rel="stylesheet" href="{% static 'accounts/css/login.css' %}">
+     <style>
+      .form{
+        height: 730px;
+      }
+     </style>
+    
+    <form class="form" >
+        <div dir="rtl" class="title">خوش آمدید</div>
+        <div dir="rtl" class="subtitle">صفحه نوبت دهی آنلاین . لطفا مقادیر زیر را با دقت تکمیل نمایید</div>
+        <div style="color: red; display: none;" id="help" dir="rtl" class="subtitle"></div>
+
+        <div class="input-container ic1">
+          <input required required onchange="namechange(value)" id="fullname" class="input" type="text" placeholder=" " />
+          <div class="cut"></div>
+          <label for="firstname" id="helpname" class="placeholder">نام و فامیل</label>
+        </div>
+        <div class="input-container ic2">
+          <input id="phone" class="input" value="09" onchange="phonechange(value)" type="text" placeholder="" required />
+          <div class="cut"></div>
+          <label for="lastname" id="helplable" class="placeholder"> شماره تماس</label>
+        </div>
+        <div class="input-container ic2">
+          <input id="nationalcode" class="input" onchange="nationalcodechange(value)" type="text" placeholder=" " required/>
+          <div class="cut cut-short"></div>
+          <label for="nationalcode" id="helfnationalcode" class="placeholder">کد ملی</label>
+        </div>
+        <div class="input-container ic2">
+          <select required id="date" class="input" >
+            <option  value="{{turn.id}}">تاریخ</option>
+
+          {% for turn in turns %}
+            <option onclick="date_select(value)"  value="{{turn.id}}">{{turn.date}}</option>
+          {% endfor %}
+{% csrf_token %}
+          </select>
+          <div class="cut cut-short"></div>
+          <label  class="placeholder">زمان </label>
+        </div>
+        <div class="input-container ic2">
+          <select required id="timeoption" class="input" >
+          
+            <option value="">زمان</option>
+          
+
+          </select>
+          <div class="cut cut-short"></div>
+          <label  class="placeholder">تاریخ </label>
+        </div>
+        <button type="button" class="submit" onclick="sumbit()">تایید</button>
+      </form>
+
+<script>
+
+
+
+</script>

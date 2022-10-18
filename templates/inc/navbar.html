@@ -1,0 +1,45 @@
+
+
+<header>
+    
+    <div class="tab-nav-container">
+        <div  onclick="type('medkit')"  data-type="medkit" class="tab active purple">
+            <i class="fas fa-medkit"></i>
+            <p>نوبت </p>
+        </div>
+        <div data-type="book" onclick="type('book')" class="tab pink">
+            <i  class="fa fa-book"></i>
+            <p>خواندنی</p>
+        </div>
+        <div style="display: none;" data-type="search" class="tab yellow">
+            <i class="fas fa-search"></i>
+            <p>جستجو</p>
+        </div>
+        {% if request.user.is_superuser %}
+        <div data-type="list" onclick="type('list')"  class="tab yellow">
+            <i class="fas fa-list"></i>
+            <p style="font-size: 12px;"> نوبت ها </p>
+        </div>
+        <div data-type="add_all_turn" onclick="type('add_all_turn')"  class="tab yellow">
+            <i class="fas fa-plus"></i>
+            <p style="font-size: 16px;"> تاریخ </p>
+        </div>
+    
+        {% endif %}
+        {% if user.is_authenticated == False %}
+                   
+        <div onclick="type('user')" class="tab teal">
+            <i class="far fa-user"></i>
+            <p>ورود</p>
+        </div>
+       
+        {% else %}
+        <div onclick="type('setting')" class="tab teal">
+            <i class="fa fa-cog"></i>
+            <p>تنظیمات</p>
+
+        </div>
+        {% endif %}
+
+    </div>
+</header>

@@ -1,0 +1,20 @@
+{% load static %}
+     <link rel="stylesheet" href="{% static 'accounts/css/login.css' %}">
+
+
+    <div class="form">
+        <div dir="rtl" class="title">خوش آمدید</div>
+        <div dir="rtl" class="subtitle">این صفحه برای کاربران ادمین می باشد</div>
+        <div class="input-container ic1">
+          <input id="username" class="input" type="text" placeholder=" " />
+          <div class="cut"></div>
+          <label for="firstname" class="placeholder"> نام کاربری</label>
+        </div>
+        <div class="input-container ic2">
+          <input id="password" class="input" type="password" placeholder=" " />
+          <div class="cut"></div>
+          <label for="" class="placeholder">رمز عبور </label>
+        </div>
+        <button onclick="login()" type="submit" class="submit">تایید</button>
+      </div>
+ 
